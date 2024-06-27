@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///C:/Users/wws/Desktop/hCAPTCHAdemo2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>hCAPTCHA Демо</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    
+    <script src="file:///C:/Users/wws/Desktop/hCAPTCHAdemo2_files/api.js.%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" type="text/javascript" async="" defer=""></script>
+    <style type="text/css">
+    html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-family:-apple-system,helvetica,arial,sans-serif;font-size:14px;vertical-align:baseline}fieldset{border:1px solid #ebebeb;padding:16px}form label{display:block;line-height:29px}form ul li{margin-bottom:10px}input{font-family:-apple-system,helvetica,arial,sans-serif;font-size:14px}ul{list-style:none}.sample-form{width:335px;padding:16px}.hcaptcha-error{border:1px solid #dd4b39;padding:5px}.hcaptcha-error-message{color:#dd4b39;font-size:24px;padding:10px 0}.hcaptcha-success{margin:20px; font-size: 24px;}.smsg{color:green;}.wrap{overflow-wrap: anywhere;}.warning{padding: 10px 10px 0px 10px;}
+      code { font-family: 'Courier New', Courier, monospace; background-color: lightgrey;}
+    }
+    }
+    </style>
+  </head>
+  <body>
+
+     <div aria-hidden="true" class="warning"><code>?hl=XXX</code> Используйте это, чтобы изменить параметр hl JS API.</div>
+     <div aria-hidden="true" class="warning"><code>?sitekey=XXX</code> Используйте это, чтобы изменить ключ сайта.</div>
+     <div aria-hidden="true" class="warning"><code>?secret=XXX</code> Используйте это, чтобы изменить секрет siteverify.</div>
+     <div aria-hidden="true" class="warning"><code>?sitekey=XXX&amp;secret=XXX</code> Используйте это, чтобы изменить оба.</div>
+    <br><br>
+    <div class="sample-form">
+      <form id="hcaptcha-demo-form" method="POST">
+        <fieldset>
+          <legend>Образец формы с hCAPTCHA</legend>
+          <ul>
+            <li role="presentation">
+              <label for="ignored1" aria-hidden="true">Поле формы (необязательно)</label>
+              <input class="textinput" id="ignored1" name="email" type="text" tabindex="-1" aria-hidden="true" aria-label="Поле формы (необязательно)" aria-required="false">
+            </li>
+            <li role="presentation">
+              <div class="">
+                <!-- BEGIN: hCaptcha implementation example. -->
+                <div id="hcaptcha-demo" class="h-captcha" data-sitekey="a5f74b19-9e45-40e0-b45d-47ff91b7a6c2" data-callback="onSuccess" data-expired-callback="onExpire"><iframe src="./h1_files/hcaptcha.html" tabindex="0" frameborder="0" scrolling="no" allow="private-state-token-issuance &#39;src&#39;; private-state-token-redemption &#39;src&#39;" title="Виджет с флажком для проверки безопасности hCaptcha" data-hcaptcha-widget-id="0fkei7ojl7wa" data-hcaptcha-response="" style="pointer-events: auto; width: 303px; height: 78px; overflow: hidden;"></iframe><textarea id="g-recaptcha-response-0fkei7ojl7wa" name="g-recaptcha-response" style="display: none;"></textarea><textarea id="h-captcha-response-0fkei7ojl7wa" name="h-captcha-response" style="display: none;"></textarea></div>
+                <script>
+                      // success callback
+                      var onSuccess = function(response) {
+                        var errorDivs = document.getElementsByClassName("hcaptcha-error");
+                        if (errorDivs.length) {
+                          errorDivs[0].className = "";
+                        }
+                        var errorMsgs = document.getElementsByClassName("hcaptcha-error-message");
+                        if (errorMsgs.length) {
+                          errorMsgs[0].parentNode.removeChild(errorMsgs[0]);
+                        }
+
+                        var logEl = document.querySelector(".hcaptcha-success");
+                        logEl.innerHTML = "Бросьте вызов успеху!"
+                      };
+
+                      var onExpire = function(response) {
+                        var logEl = document.querySelector(".hcaptcha-success");
+                        logEl.innerHTML = "Срок действия токена истек."
+                      };
+                </script>
+                <!-- END: hCaptcha implementation example. -->
+              </div>
+            </li>
+            <li>
+              <input id="hcaptcha-demo-submit" type="submit" value="Submit">
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+      
+      <div class="hcaptcha-success smsg" aria-live="polite"></div>
+    </div>
+
+  
+<div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px; border-radius: 4px; left: 89px; top: 10px; z-index: 2147483647; position: absolute; pointer-events: auto; transition: opacity 0.15s ease-out 0s; opacity: 1; visibility: visible; display: block;"><div style="position: relative; z-index: 1; width: 400px; height: 600px;"><iframe src="./h1_files/hcaptcha(1).html" frameborder="0" scrolling="no" allow="private-state-token-issuance &#39;src&#39;; private-state-token-redemption &#39;src&#39;" title="Основное содержание испытания hCaptcha" style="border: 0px; z-index: 2000000000; position: relative; width: 400px; height: 600px;"></iframe></div><div style="width: 100%; height: 100%; position: fixed; pointer-events: auto; top: 0px; left: 0px; z-index: 0; background-color: rgb(255, 255, 255); opacity: 0.05; cursor: pointer;"></div><div style="border-width: 11px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 1; right: 100%; top: 267px;"><div style="border-width: 10px; border-style: solid; border-color: transparent rgb(255, 255, 255) transparent transparent; position: relative; top: 10px; z-index: 1; display: block;"></div><div style="border-width: 11px; border-style: solid; border-color: transparent rgb(215, 215, 215) transparent transparent; position: relative; top: -11px; z-index: 0; display: block;"></div></div></div></body></html>
